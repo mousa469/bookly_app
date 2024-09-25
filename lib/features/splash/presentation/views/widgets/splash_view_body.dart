@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/assets.dart';
