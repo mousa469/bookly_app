@@ -14,7 +14,7 @@ abstract class Styles {
       TextStyle(
         fontSize: 20,
          fontWeight: FontWeight.normal,
-         fontFamily: kOleo
+        
          );
 
 

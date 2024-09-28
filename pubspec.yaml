@@ -70,7 +70,7 @@ flutter:
   fonts:
     - family: Oleo
       fonts:
-        - asset: assets/fonts/OleoScriptSwashCaps-Regular
+        - asset: assets\fonts\OleoScriptSwashCaps-Regular.ttf
     #     - asset: fonts/Schyler-Italic.ttf
     #       style: italic
     # - family: Trajan Pro
