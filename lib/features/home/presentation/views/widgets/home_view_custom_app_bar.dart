@@ -2,8 +2,8 @@ import 'package:bookly/features/home/presentation/views/widgets/custom_search_ic
 import 'package:flutter/material.dart';
 
 
-class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key, required this.logo, required  this.icon, required this.onPressed});
+class HomeViewCustomAppBar extends StatelessWidget {
+  const HomeViewCustomAppBar({super.key, required this.logo, required  this.icon, required this.onPressed});
   final String logo;
    final Icon icon;
    final VoidCallback onPressed ;

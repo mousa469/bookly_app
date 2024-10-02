@@ -2,7 +2,7 @@ import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/home/presentation/views/widgets/best_seller_list_view_builder.dart';
 
-import 'package:bookly/features/home/presentation/views/widgets/custom_app_bar.dart';
+import 'package:bookly/features/home/presentation/views/widgets/home_view_custom_app_bar.dart';
 
 import 'package:bookly/features/home/presentation/views/widgets/featured_list_view.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +20,7 @@ class HomeViewBody extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30.0),
-                child: CustomAppBar(
+                child: HomeViewCustomAppBar(
                   icon: const Icon(Icons.search),
                   logo: AssetsData.logo,
                   onPressed: () {},
