@@ -7,3 +7,4 @@ const kSplashView = '/';
 
 const kHomeView = '/HomeView';
 const kBookDetails = '/BookDetails';
+const kSearchView = '/SearchView';

@@ -1,3 +1,4 @@
+import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/home/presentation/views/widgets/best_seller_list_view_builder.dart';
@@ -6,6 +7,7 @@ import 'package:bookly/features/home/presentation/views/widgets/home_view_custom
 
 import 'package:bookly/features/home/presentation/views/widgets/featured_list_view.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -23,14 +25,16 @@ class HomeViewBody extends StatelessWidget {
                 child: HomeViewCustomAppBar(
                   icon: const Icon(Icons.search),
                   logo: AssetsData.logo,
-                  onPressed: () {},
+                  onPressed: () {
+                    GoRouter.of(context).push(kSearchView);
+                  },
                 ),
               ),
               const FeaturedBooksListView(),
               const SizedBox(
                 height: 50,
               ),
-             const  Padding(
+              const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 30),
                 child: const Text(
                   "Best Seller",
@@ -43,15 +47,11 @@ class HomeViewBody extends StatelessWidget {
             ],
           ),
         ),
-      
-
         const SliverPadding(
           padding: EdgeInsets.symmetric(horizontal: 30),
           sliver: BestSellerSliverListBuilder(),
         ),
       ],
     );
-
- 
   }
 }
