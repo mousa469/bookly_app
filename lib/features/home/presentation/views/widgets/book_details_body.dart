@@ -1,4 +1,3 @@
-
 import 'package:bookly/features/home/presentation/views/widgets/book_details_custom_app_bar.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_details_section.dart';
 
@@ -10,42 +9,27 @@ class BookDetailsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-
-return const CustomScrollView(
-  slivers:  [
-    SliverFillRemaining(
-      hasScrollBody: false,
-      child: Padding(
-      padding:  EdgeInsets.symmetric(horizontal: 30.0, vertical: 10),
-      child: Column(
-        children: [
-           BookDetailsCustomAppBar(),
-          BooksDetailsSection(),
-          Expanded(
-           child:   SizedBox(
-              height: 35,
+    return const CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10),
+            child: Column(
+              children: [
+                BookDetailsCustomAppBar(),
+                BooksDetailsSection(),
+                Expanded(
+                  child: SizedBox(
+                    height: 35,
+                  ),
+                ),
+                SimilarBooksSection()
+              ],
             ),
-
-           
-         ),
-          SimilarBooksSection()
-          
-        ],
-      ),
-    ) ,
-    )
-  ],
-);
-
-      
-   
+          ),
+        )
+      ],
+    );
   }
 }
-
-
-
-
-
-
-

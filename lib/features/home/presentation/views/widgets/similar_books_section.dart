@@ -14,10 +14,11 @@ class SimilarBooksSection extends StatelessWidget {
           "you can also be like ",
           style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w600),
         ),
-         const SizedBox(height: 8,),
-          const  SimilarBooksListView()
-
-    ]
-    ,);
+        const SizedBox(
+          height: 8,
+        ),
+        const SimilarBooksListView()
+      ],
+    );
   }
 }

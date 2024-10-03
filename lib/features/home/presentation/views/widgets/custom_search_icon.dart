@@ -17,12 +17,10 @@ class CustomSearchIcon extends StatelessWidget {
       height: 32,
       child: Center(
         child: IconButton(
-          
           onPressed: onPressed,
           icon: customAppBarIcon,
           color: Colors.white,
           iconSize: 18,
-          
         ),
       ),
     );

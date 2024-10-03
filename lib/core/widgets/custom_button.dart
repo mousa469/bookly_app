@@ -3,13 +3,18 @@ import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton(
-      {super.key, required this.text, required this.borderRadius, this.buttonBackGroundColor, required this.textButtonColor,  this.fontSize});
+      {super.key,
+      required this.text,
+      required this.borderRadius,
+      this.buttonBackGroundColor,
+      required this.textButtonColor,
+      this.fontSize});
 
   final String text;
   final BorderRadiusGeometry borderRadius;
   final Color? buttonBackGroundColor;
   final Color textButtonColor;
-  final  double? fontSize ;
+  final double? fontSize;
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +26,10 @@ class CustomButton extends StatelessWidget {
           )),
       onPressed: () {},
       child: Text(text,
-          style: Styles.textStyle18
-              .copyWith(fontWeight: FontWeight.w900, color: textButtonColor , fontSize: fontSize )),
+          style: Styles.textStyle18.copyWith(
+              fontWeight: FontWeight.w900,
+              color: textButtonColor,
+              fontSize: fontSize)),
     );
   }
 }
