@@ -13,7 +13,7 @@ class BooksDetailsSection extends StatelessWidget {
       children: [
         SizedBox(
             height: MediaQuery.of(context).size.height * .32,
-            child: const FeaturedListViewItem()),
+            child: const FeaturedListViewItem(imgUrl: "https://th.bing.com/th/id/OIP.tv0wq0U2RfQGSg_r5YSzlgHaLu?rs=1&pid=ImgDetMain",)),
         const SizedBox(
           height: 30,
         ),
