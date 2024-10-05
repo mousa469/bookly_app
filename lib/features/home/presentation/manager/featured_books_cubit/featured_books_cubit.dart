@@ -9,13 +9,15 @@ class FeaturedBooksCubit extends Cubit<FeaturedBooksStates> {
 
   final HomeRepoImplementation homeRepoImplementation;
 
-  fetchFeaturedBooks() async {
-    emit(FeaturedBooksLoadingState());
-    var result = await homeRepoImplementation.fetchBestSellerBooks();
-    result.fold((failure) {
-      emit(FeaturedBooksFailureState(errMessage: failure.errMessage));
-    }, (books) {
-      emit(FeaturedBooksSuccessState(booksList: books));
-    });
-  }
+fetchFeaturedBooks() async {
+
+  emit(FeaturedBooksLoadingState());
+  var result = await homeRepoImplementation.fetchFeaturedBooks();
+  result.fold((failure) {
+ 
+    emit(FeaturedBooksFailureState(errMessage: failure.errMessage));
+  }, (books) {
+    emit(FeaturedBooksSuccessState(booksList: books));
+  });
+}
 }

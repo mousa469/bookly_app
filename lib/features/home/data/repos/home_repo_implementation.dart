@@ -6,7 +6,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
 class HomeRepoImplementation implements HomeRepo {
- final  ApiServices apiServices;
+  final ApiServices apiServices;
 
   HomeRepoImplementation({required this.apiServices});
 
@@ -22,7 +22,7 @@ class HomeRepoImplementation implements HomeRepo {
         books.add(BookModel.fromJson(book));
       }
       return right(books);
-    } on Exception catch (e) {
+    } catch (e) {
       if (e is DioException) {
         return left(ServerFailure.dioError(dioException: e));
       }
@@ -42,10 +42,11 @@ class HomeRepoImplementation implements HomeRepo {
         books.add(BookModel.fromJson(book));
       }
       return right(books);
-    } on Exception catch (e) {
+    } catch (e) {
       if (e is DioException) {
         return left(ServerFailure.dioError(dioException: e));
       }
+      
 
       return left(ServerFailure(errMessage: e.toString()));
     }
