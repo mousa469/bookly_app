@@ -6,8 +6,9 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
 class HomeRepoImplementation implements HomeRepo {
-  ApiServices apiServices = ApiServices();
+ final  ApiServices apiServices;
 
+  HomeRepoImplementation({required this.apiServices});
 
   @override
   Future<Either<Failure, List<BookModel>>> fetchBestSellerBooks() async {
@@ -32,11 +33,10 @@ class HomeRepoImplementation implements HomeRepo {
 
   @override
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
-      try {
+    try {
       List<BookModel> books = [];
       var data = await apiServices.get(
-          endPoint:
-              "volumes?q=subject:programming&Filtering=free-ebooks");
+          endPoint: "volumes?q=subject:programming&Filtering=free-ebooks");
 
       for (var book in data["items"]) {
         books.add(BookModel.fromJson(book));
