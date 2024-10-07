@@ -1,4 +1,5 @@
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:bookly/features/home/presentation/views/widgets/custom_image.dart';
+
 import 'package:flutter/material.dart';
 
 class FeaturedListViewItem extends StatelessWidget {
@@ -8,16 +9,6 @@ class FeaturedListViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(16),
-      child: AspectRatio(
-        aspectRatio: 1.4 / 2,
-        child: CachedNetworkImage(
-          errorWidget: (context, url, error) => const Icon(Icons.error),
-          imageUrl: imgUrl,
-          fit: BoxFit.fill,
-        ),
-      ),
-    );
+    return CustomImage(imgUrl: imgUrl);
   }
 }

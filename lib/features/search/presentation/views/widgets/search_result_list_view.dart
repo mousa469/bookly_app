@@ -9,7 +9,7 @@ class SearchResultListview extends StatelessWidget {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
         childCount: 10,
-        (context, index) => const BestSellerListViewItem(),
+        (context, index) => const Text("data"),
       ),
     );
   }

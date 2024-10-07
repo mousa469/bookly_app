@@ -1,5 +1,9 @@
+import 'package:bookly/core/widgets/custom_circular_loading.dart';
+import 'package:bookly/core/widgets/custom_error_widget.dart';
+import 'package:bookly/features/home/presentation/manager/best_seller_cubit/cubit/best_seller_cubit.dart';
 import 'package:bookly/features/home/presentation/views/widgets/best_seller_list_view_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 // class BestSellerListViewBuilder extends StatelessWidget {
 //   const BestSellerListViewBuilder({super.key});
@@ -17,11 +21,31 @@ class BestSellerSliverListBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverList(
-      delegate: SliverChildBuilderDelegate(
-        childCount: 10,
-        (context, index) => const BestSellerListViewItem(),
-      ),
+    return BlocBuilder<BestSellerCubit, BestSellerState>(
+      builder: (context, state) {
+        if (state is BestSellerFailureState) {
+          return SliverToBoxAdapter(
+            child: CustomErrorWidget(errMessage: state.errMessage),
+          );
+        } else if (state is BestSellerSucessState) {
+          return SliverList(
+            delegate: SliverChildBuilderDelegate(
+              childCount: state.books.length,  
+              (context, index) =>  BestSellerListViewItem(bookModel: state.books[index],)
+     ),
+          );
+        } else {
+          return const SliverToBoxAdapter(
+            child: CustomCircularLoading(),
+          );
+        }
+
+        
+      },
     );
   }
 }
+
+
+
+
